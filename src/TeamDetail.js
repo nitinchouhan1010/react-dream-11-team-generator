@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Team from "./team.json";
+import TeamForm from "./TeamForm.js";
+
 const TeamDetail = () => {
   console.log(Team);
   return (
     <div>
+      <TeamForm />
       <div class="container mt-4">
         <div class="card text-center mb-4">
           <div class="card-body">Dynamic "Dream 11" team generater</div>
