@@ -1,21 +1,7 @@
 import React, { useState } from "react";
-// import Team from "./team.json";
+import Team from "./team.json";
 const TeamDetail = () => {
-  const Team = {
-    TeamFirst: "MI",
-    TeamSecond: "KKR",
-    captain: "RS",
-    vcaptain: "vc",
-    player3: "3",
-    player4: "4",
-    player5: "5",
-    player6: "6",
-    player7: "7",
-    player8: "8",
-    player9: "9",
-    player10: "10",
-    player11: "11"
-  };
+  console.log(Team);
   return (
     <div>
       <div class="container mt-4">
