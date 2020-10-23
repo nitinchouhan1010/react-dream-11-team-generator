@@ -1,25 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Formik } from "formik";
+import Team from "./team.json";
 
 const TeamForm = () => {
+  const [count, setCount] = useState(Team);
+  var temp;
+
+  useEffect(() => {
+    setCount(temp);
+    console.log(count);
+  });
   return (
     <div class="container">
       <Formik
-        initialValues={{ email: "" }}
-        validate={values => {
-          const errors = {};
-          if (!values.email) {
-            errors.email = "Required";
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = "Invalid email address";
-          }
-          return errors;
+        initialValues={{
+          TeamFirst: "",
+          TeamSecond: "",
+          captain: "",
+          vcaptain: "",
+          player3: "",
+          player4: "",
+          player5: "",
+          player6: "",
+          player7: "",
+          player8: "",
+          player9: "",
+          player10: "",
+          player11: ""
         }}
+        // validate={values => {
+        //   const errors = {};
+        //   if (!values.email) {
+        //     errors.email = "Required";
+        //   } else if (
+        //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        //   ) {
+        //     errors.email = "Invalid email address";
+        //   }
+        //   return errors;
+        // }}
         onSubmit={(values, { setSubmitting }) => {
+          temp = values;
+          console.log(temp);
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            alert(JSON.stringify(values));
             setSubmitting(false);
           }, 400);
         }}
@@ -32,121 +56,174 @@ const TeamForm = () => {
           handleBlur,
           handleSubmit,
           isSubmitting
-          /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="email" class="w-100">
-                First Name
+              <label htmlFor="TeamFirst" class="w-100">
+                Team First
               </label>
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="TeamFirst"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={values.TeamFirst}
               />
-              {errors.email && touched.email && errors.email}
             </div>
 
             <div>
-              <label htmlFor="email" class="w-100">
-                First Name
+              <label htmlFor="TeamSecond" class="w-100">
+                Team Second
               </label>
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="TeamSecond"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={values.TeamSecond}
               />
-              {errors.email && touched.email && errors.email}
             </div>
-
-
             <div>
-              <label htmlFor="email" class="w-100">
-                First Name
+              <label htmlFor="captain" class="w-100">
+                Captain
               </label>
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="captain"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={values.captain}
               />
-              {errors.email && touched.email && errors.email}
-            </div>
-
-
-            <div>
-              <label htmlFor="email" class="w-100">
-                First Name
-              </label>
-              <input
-                type="email"
-                name="email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
-              />
-              {errors.email && touched.email && errors.email}
             </div>
 
             <div>
-              <label htmlFor="email" class="w-100">
-                First Name
+              <label htmlFor="vcaptain" class="w-100">
+                vcaptain
               </label>
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="vcaptain"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={values.vcaptain}
               />
-              {errors.email && touched.email && errors.email}
             </div>
 
             <div>
-              <label htmlFor="email" class="w-100">
-                First Name
+              <label htmlFor="player3" class="w-100">
+                player3
               </label>
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="player3"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={values.player3}
               />
-              {errors.email && touched.email && errors.email}
             </div>
 
+            <div>
+              <label htmlFor="player4" class="w-100">
+                player4
+              </label>
+              <input
+                type="text"
+                name="player4"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.player4}
+              />
+            </div>
 
             <div>
-              <label htmlFor="email" class="w-100">
-                First Name
+              <label htmlFor="player5" class="w-100">
+                player5
               </label>
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="player5"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={values.player5}
               />
-              {errors.email && touched.email && errors.email}
             </div>
+
             <div>
-              <label htmlFor="email" class="w-100">
-                First Name
+              <label htmlFor="player6" class="w-100">
+                player6
               </label>
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="player6"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={values.player6}
               />
-              {errors.email && touched.email && errors.email}
+            </div>
+
+            <div>
+              <label htmlFor="player7" class="w-100">
+                player7
+              </label>
+              <input
+                type="text"
+                name="player7"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.player7}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="player8" class="w-100">
+                player8
+              </label>
+              <input
+                type="text"
+                name="player8"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.player8}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="player9" class="w-100">
+                player9
+              </label>
+              <input
+                type="text"
+                name="player9"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.player9}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="player10" class="w-100">
+                player10
+              </label>
+              <input
+                type="text"
+                name="player10"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.player10}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="player11" class="w-100">
+                player11
+              </label>
+              <input
+                type="text"
+                name="player11"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.player11}
+              />
             </div>
             <button type="submit" disabled={isSubmitting}>
               Submit

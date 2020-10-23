@@ -3,7 +3,6 @@ import Team from "./team.json";
 import TeamForm from "./TeamForm.js";
 
 const TeamDetail = () => {
-  console.log(Team);
   return (
     <div>
       <TeamForm />
