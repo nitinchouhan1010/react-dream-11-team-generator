@@ -37,6 +37,7 @@ const TeamForm = () => {
         onSubmit={(values, { setSubmitting }) => {
           temp = values;
           localStorage.setItem("dataSource", JSON.stringify(values));
+          alert("Please click on Preview");
           console.log(temp.captain);
           // setTimeout(() => {
           //   alert(JSON.stringify(values));
