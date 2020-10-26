@@ -11,8 +11,13 @@ const TeamForm = () => {
     console.log(count);
   });
   return (
-    <div className="container">
-      <Link to="/TeamDetail">Preview</Link>
+    <div className="container pb-4">
+      <Link
+        to="/TeamDetail"
+        className="btn-sm border float-right mt-3 text-black-50"
+      >
+        Preview
+      </Link>
       <Formik
         initialValues={{
           TeamFirst: "",
@@ -29,25 +34,14 @@ const TeamForm = () => {
           player10: "",
           player11: ""
         }}
-        // validate={values => {
-        //   const errors = {};
-        //   if (!values.email) {
-        //     errors.email = "Required";
-        //   } else if (
-        //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        //   ) {
-        //     errors.email = "Invalid email address";
-        //   }
-        //   return errors;
-        // }}
         onSubmit={(values, { setSubmitting }) => {
           temp = values;
           localStorage.setItem("dataSource", JSON.stringify(values));
           console.log(temp.captain);
-          setTimeout(() => {
-            alert(JSON.stringify(values));
-            setSubmitting(false);
-          }, 400);
+          // setTimeout(() => {
+          //   alert(JSON.stringify(values));
+          //   setSubmitting(false);
+          // }, 400);
         }}
       >
         {({
@@ -65,6 +59,7 @@ const TeamForm = () => {
                 Team First
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="TeamFirst"
                 onChange={handleChange}
@@ -78,6 +73,7 @@ const TeamForm = () => {
                 Team Second
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="TeamSecond"
                 onChange={handleChange}
@@ -90,6 +86,7 @@ const TeamForm = () => {
                 Captain
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="captain"
                 onChange={handleChange}
@@ -103,6 +100,7 @@ const TeamForm = () => {
                 vcaptain
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="vcaptain"
                 onChange={handleChange}
@@ -116,6 +114,7 @@ const TeamForm = () => {
                 player3
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="player3"
                 onChange={handleChange}
@@ -129,6 +128,7 @@ const TeamForm = () => {
                 player4
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="player4"
                 onChange={handleChange}
@@ -142,6 +142,7 @@ const TeamForm = () => {
                 player5
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="player5"
                 onChange={handleChange}
@@ -155,6 +156,7 @@ const TeamForm = () => {
                 player6
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="player6"
                 onChange={handleChange}
@@ -168,6 +170,7 @@ const TeamForm = () => {
                 player7
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="player7"
                 onChange={handleChange}
@@ -181,6 +184,7 @@ const TeamForm = () => {
                 player8
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="player8"
                 onChange={handleChange}
@@ -194,6 +198,7 @@ const TeamForm = () => {
                 player9
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="player9"
                 onChange={handleChange}
@@ -207,6 +212,7 @@ const TeamForm = () => {
                 player10
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="player10"
                 onChange={handleChange}
@@ -220,6 +226,7 @@ const TeamForm = () => {
                 player11
               </label>
               <input
+                className="form-control mb-2 form-control-sm"
                 type="text"
                 name="player11"
                 onChange={handleChange}
@@ -227,7 +234,11 @@ const TeamForm = () => {
                 value={values.player11}
               />
             </div>
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="btn btn-outline-dark btn-sm"
+            >
               Submit
             </button>
           </form>

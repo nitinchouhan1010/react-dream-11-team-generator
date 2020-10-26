@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import Team from "./team.json";
 import TeamForm from "./TeamForm.js";
-
+import { BrowserRouter as Router, Link } from "react-router-dom";
 const TeamDetail = () => {
   var Team = JSON.parse(localStorage.getItem("dataSource"));
 
@@ -9,6 +9,12 @@ const TeamDetail = () => {
   return (
     <div>
       <div className="container mt-4">
+        <Link
+          to="/"
+          className="btn-sm border mt-3 text-black-50 mb-3 d-inline-block"
+        >
+          Back to form
+        </Link>
         <div className="card text-center mb-4">
           <div className="card-body">Dynamic "Dream 11" team generater</div>
         </div>
@@ -29,7 +35,7 @@ const TeamDetail = () => {
             <h3>{Team.vcaptain}</h3>
           </div>
         </div>
-        <h4>Other Team Player will be</h4>
+        <h6>Other Team Player will be</h6>
         <ul className="list-inline">
           <li>{Team.player3}</li>
           <li>{Team.player4}</li>
