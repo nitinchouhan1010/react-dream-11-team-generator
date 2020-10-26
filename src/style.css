@@ -3,3 +3,7 @@ p {
   font-family: Lato;
   font-size: 14px;
 }
+
+label {
+  text-transform: capitalize;
+}
