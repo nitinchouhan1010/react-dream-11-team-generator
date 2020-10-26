@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Formik } from "formik";
 import Team from "./team.json";
-
+import { BrowserRouter as Router, Link } from "react-router-dom";
 const TeamForm = () => {
   const [count, setCount] = useState(Team);
   var temp;
 
   useEffect(() => {
-    setCount(temp);
+    setCount(count);
     console.log(count);
   });
   return (
-    <div class="container">
+    <div className="container">
+      <Link to="/TeamDetail">Preview</Link>
       <Formik
         initialValues={{
           TeamFirst: "",
@@ -41,7 +42,8 @@ const TeamForm = () => {
         // }}
         onSubmit={(values, { setSubmitting }) => {
           temp = values;
-          console.log(temp);
+          localStorage.setItem("dataSource", JSON.stringify(values));
+          console.log(temp.captain);
           setTimeout(() => {
             alert(JSON.stringify(values));
             setSubmitting(false);
@@ -59,7 +61,7 @@ const TeamForm = () => {
         }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="TeamFirst" class="w-100">
+              <label htmlFor="TeamFirst" className="w-100">
                 Team First
               </label>
               <input
@@ -72,7 +74,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="TeamSecond" class="w-100">
+              <label htmlFor="TeamSecond" className="w-100">
                 Team Second
               </label>
               <input
@@ -84,7 +86,7 @@ const TeamForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="captain" class="w-100">
+              <label htmlFor="captain" className="w-100">
                 Captain
               </label>
               <input
@@ -97,7 +99,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="vcaptain" class="w-100">
+              <label htmlFor="vcaptain" className="w-100">
                 vcaptain
               </label>
               <input
@@ -110,7 +112,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="player3" class="w-100">
+              <label htmlFor="player3" className="w-100">
                 player3
               </label>
               <input
@@ -123,7 +125,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="player4" class="w-100">
+              <label htmlFor="player4" className="w-100">
                 player4
               </label>
               <input
@@ -136,7 +138,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="player5" class="w-100">
+              <label htmlFor="player5" className="w-100">
                 player5
               </label>
               <input
@@ -149,7 +151,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="player6" class="w-100">
+              <label htmlFor="player6" className="w-100">
                 player6
               </label>
               <input
@@ -162,7 +164,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="player7" class="w-100">
+              <label htmlFor="player7" className="w-100">
                 player7
               </label>
               <input
@@ -175,7 +177,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="player8" class="w-100">
+              <label htmlFor="player8" className="w-100">
                 player8
               </label>
               <input
@@ -188,7 +190,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="player9" class="w-100">
+              <label htmlFor="player9" className="w-100">
                 player9
               </label>
               <input
@@ -201,7 +203,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="player10" class="w-100">
+              <label htmlFor="player10" className="w-100">
                 player10
               </label>
               <input
@@ -214,7 +216,7 @@ const TeamForm = () => {
             </div>
 
             <div>
-              <label htmlFor="player11" class="w-100">
+              <label htmlFor="player11" className="w-100">
                 player11
               </label>
               <input
